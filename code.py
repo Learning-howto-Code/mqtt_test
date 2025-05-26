@@ -35,7 +35,7 @@ print("Connected to MQTT")
 
 # Loop to publish text
 while True:
-    message = input("Enter message: ")
+    message = "esp32 C6"
     mqtt_client.publish(topic_pub, message)
     print("Published:", message)
-    time.sleep(5)
+    time.sleep(3)
