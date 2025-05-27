@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Usage Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Row: Pie Chart and Average Usage -->
+        <div class="top-row">
+            <!-- Pie Chart -->
+            <div class="chart">
+                <h3>Usage by Room</h3>
+                <img src="/static/pie_chart.png" alt="Pie Chart">
+            </div>
+
+            <!-- Average Duration -->
+            <div class="avg-usage">
+                <div class="timeline">
+                    <h3>Average Usage</h3>
+                    <ul>
+                        {% for entry in avg_durations %}
+                            <li><strong>{{ entry.room }}</strong>: {{ entry.duration }} seconds</li>
+                        {% endfor %}
+                    </ul>
+                    <br>
+                    <h3>Most recent uses</h3>
+                    <ul>
+                        {% for entry in last_five %}
+                            <li><strong>{{ entry.room }}</strong> - On: {{ entry.time_on }}, Off: {{ entry.time_off }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Most Recent Uses -->
+        
+    </div>
+</body>
+</html>
